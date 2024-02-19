@@ -1,0 +1,30 @@
+{
+  schedule: [
+    '* * * * *',
+  ],
+  semanticCommits: 'enabled',
+  packageRules: [
+    {
+      matchManagers: [
+        'cargo',
+      ],
+      matchCurrentVersion: '>=0.1.0',
+      matchUpdateTypes: [
+        'patch',
+      ],
+      automerge: false,
+      groupName: 'compatible',
+    },
+    {
+      matchManagers: [
+        'cargo',
+      ],
+      matchCurrentVersion: '>=1.0.0',
+      matchUpdateTypes: [
+        'minor',
+      ],
+      automerge: false,
+      groupName: 'compatible',
+    },
+  ],
+}
